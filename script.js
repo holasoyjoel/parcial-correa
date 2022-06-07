@@ -10,6 +10,8 @@ const inputIntereses = document.querySelectorAll("input[type='checkbox']");
 const inputSelect = document.querySelector("select");
 const buttonEnviar = document.querySelector("button");
 const mensajesErrores = document.querySelectorAll(".mensajeError");
+const modal = document.querySelector("#mymodal");
+const bntClose = document.querySelector(".close");
 
 
 function validarNombre(){
@@ -143,9 +145,12 @@ inputApellido.addEventListener("blur" , validarApellido)
 inputEmail.addEventListener("blur" , validarEmail)
 inputEdad.addEventListener("blur" , validarEdad)
 inputSelect.addEventListener("change" , validarPais)
+bntClose.addEventListener("click" , function(){
+    modal.style.display = "none";
+})
 buttonEnviar.addEventListener("click" , function(e){
     if(validarCampos()){
-        alert("datos correctos")
+        modal.style.display = "block";
         e.preventDefault();
     }
     else{

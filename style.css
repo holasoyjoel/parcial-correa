@@ -136,7 +136,8 @@ footer span{
 }
 
 .modal{
-    display: none;
+    display: flex;
+    flex-direction: row;
     position: fixed;
     z-index: 1;
     padding-top: 100px;
@@ -145,19 +146,36 @@ footer span{
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0 , 0.4);
+    background-color: rgba(0, 0, 0 , 0.5);
 }
 .modal-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 50%;
+}
+.modal-content{
+    color:green;
+    font-weight: bold;
 }
 .close{
-    color: #000;
+    border:2px solid red;
+    border-radius: 10%;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 8px;
+    color: red;
     text-decoration: none;
     cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+.close:hover{
+    background-color: red;
+    color: white;
 }
 @media only screen and (min-width: 800px){
     .header{
