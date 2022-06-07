@@ -3,6 +3,10 @@
     --color-negro: #000000;
     --color-principal: #331d5f;
     --color-secundario: #ff0d86;
+    --color-rojo: red;
+    --color-gris: grey;
+    --color-verde: green;
+    --color-sobra: rgba(0, 0, 0, 0.5);
 }
 body{
     font-family: Arial, Helvetica, sans-serif;
@@ -14,30 +18,30 @@ input{
     outline: none;
 }
 input:focus{
-    border:1px solid grey;
-    color: grey;
+    border:1px solid var(--color-gris);
+    color: var(--color-gris);
 }
 .hidden{
     visibility: hidden;
 }
 .mensajeError{
-    color: red;
+    color: var(--color-rojo);
 }
 .borderError{
-    border:2px solid red;
-    color: red;
+    border:2px solid var(--color-rojo);
+    color: var(--color-rojo);
 }
 .borderCorrecto{
-    border: 2px solid green;
-    color: green;
+    border: 2px solid var(--color-verde);
+    color: var(--color-verde);
 }
 .header{
     background-color: var(--color-principal);
+    padding: 0 2rem;
     height: 15vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;
 }
 .header-icono , .nav-btn-menu{
     color: var(--color-blanco);
@@ -53,31 +57,30 @@ input:focus{
     display: none;
     font-weight: bold;
     text-decoration: none;
+    transition: all .3s ease-in-out;
     width: 100%;
     height: 100%;
-    transition: all .3s ease-in-out;
 }
 .main{
     margin-top: 2rem;
 }
 .form{
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 1px 5px var(--color-sobra);
     box-sizing: border-box;
     margin: auto;
     padding: 1rem;
-    width: 80%;
+    width: 60%;
     display:flex;
     flex-direction: column;
 }
 .boxinput{
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--color-negro);
     margin-bottom: 10px;
     margin-top: 10px;
     padding-bottom: 10px;
     display: flex;
     flex-direction: column;
 }
-
 .form .boxinput:nth-child(5) label:first-child ~ label{
     margin-left: 3rem;
 }
@@ -115,7 +118,6 @@ button{
 button:hover{
     background-color: var(--color-principal);
 }
-
 aside{
     display: none;
 }
@@ -134,54 +136,55 @@ footer{
 footer span{
     color: var(--color-secundario);
 }
-
 .modal{
-    display: flex;
-    flex-direction: row;
-    position: fixed;
-    z-index: 1;
+    background-color: var(--color-sobra);
     padding-top: 100px;
+    display: none;
+    flex-direction: row;
+    overflow: auto;
+    position: fixed;
     left: 0;
     top: 0;
+    z-index: 1;
     width: 100%;
     height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0 , 0.5);
 }
 .modal-content{
+    background-color: var(--color-blanco);
+    border: 1px solid var(--color-gris);
+    margin: auto;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
     width: 50%;
 }
 .modal-content{
-    color:green;
+    color:var(--color-verde);
     font-weight: bold;
 }
 .close{
-    border:2px solid red;
+    border:2px solid var(--color-rojo);
     border-radius: 10%;
+    color: var(--color-rojo);
+    cursor: pointer;
     font-size: 1rem;
     font-weight: bold;
     padding: 8px;
-    color: red;
     text-decoration: none;
-    cursor: pointer;
     transition: all .3s ease-in-out;
 }
 .close:hover{
-    background-color: red;
-    color: white;
+    background-color: var(--color-rojo);
+    color: var(--color-blanco);
 }
 @media only screen and (min-width: 800px){
     .header{
         flex-direction: column;
         height: 20vh;
-        padding: 0;
+    }
+    .header > span{
+        margin-top:  10px;
     }
     .nav{
         width: 100%;
@@ -225,5 +228,19 @@ footer span{
     }
     button{
         width: 100%;
+    }
+
+    .aside{
+        background-color: red;
+        height: 64vh;
+        width: 15vw;
+        display: block;
+        position: fixed;
+        top: 25%;
+        right: 2%;
+    }
+    .aside img{
+        width: 100%;
+        height: 100%;
     }
 }

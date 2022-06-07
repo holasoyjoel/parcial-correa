@@ -1,6 +1,3 @@
-
-
-
 const inputNombre = document.getElementById("nombre");
 const inputApellido = document.getElementById("apellido");
 const inputEmail = document.getElementById("email");
@@ -12,8 +9,6 @@ const buttonEnviar = document.querySelector("button");
 const mensajesErrores = document.querySelectorAll(".mensajeError");
 const modal = document.querySelector("#mymodal");
 const bntClose = document.querySelector(".close");
-
-
 function validarNombre(){
     if( inputNombre.value.length < 3){
         mensajesErrores[0].classList.remove("hidden")
@@ -104,7 +99,6 @@ function validarPais(){
         return false
     }
 }
-
 function validarCampos(){
     if(validarNombre()){
         if(validarApellido()){
@@ -139,7 +133,6 @@ function validarCampos(){
     }
     return false;
 }
-
 inputNombre.addEventListener("blur" , validarNombre)
 inputApellido.addEventListener("blur" , validarApellido)
 inputEmail.addEventListener("blur" , validarEmail)
