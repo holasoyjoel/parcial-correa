@@ -1,3 +1,5 @@
+const buttonNav = document.querySelector(".nav-btn-menu");
+const navResponsive = document.querySelector(".nav-responsive"); 
 const inputNombre = document.getElementById("nombre");
 const inputApellido = document.getElementById("apellido");
 const inputEmail = document.getElementById("email");
@@ -9,6 +11,11 @@ const buttonEnviar = document.querySelector("button");
 const mensajesErrores = document.querySelectorAll(".mensajeError");
 const modal = document.querySelector("#mymodal");
 const bntClose = document.querySelector(".close");
+
+buttonNav.addEventListener("click" , function(){
+    navResponsive.classList.toggle("hidden");
+})
+
 function validarNombre(){
     if( inputNombre.value.length < 3){
         mensajesErrores[0].classList.remove("hidden")
