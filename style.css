@@ -145,7 +145,7 @@ footer span{
 .modal{
     background-color: var(--color-sobra);
     padding-top: 100px;
-    /* display: none; */
+    display: none;
     flex-direction: row;
     align-items: center;
     overflow: auto;
