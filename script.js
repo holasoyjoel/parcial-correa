@@ -7,9 +7,10 @@ const inputEmail = document.getElementById("email");
 const inputEdad = document.getElementById("edad");
 const inputSexos = document.querySelectorAll("input[type='radio']");
 const inputIntereses = document.querySelectorAll("input[type='checkbox']");
+const inputSelect = document.querySelector("select");
 const buttonEnviar = document.querySelector("button");
 const mensajesErrores = document.querySelectorAll(".mensajeError");
-console.log(mensajesErrores);
+
 
 function validarNombre(){
     if( inputNombre.value.length < 3){
@@ -91,7 +92,16 @@ function validarIntereses(){
         return false;
     }
 }
-
+function validarPais(){
+    if(inputSelect.value != ""){
+        mensajesErrores[6].classList.add("hidden")
+        return true;
+    }
+    else{
+        mensajesErrores[6].classList.remove("hidden")
+        return false
+    }
+}
 
 function validarCampos(){
     if(validarNombre()){
@@ -99,7 +109,15 @@ function validarCampos(){
             if(validarEmail()){
                 if(validarEdad()){
                    if(validarIntereses()){
-                        return true;
+                        if(validarPais()){
+                            return true;
+                        }
+                        else{
+                            inputSelect.focus();
+                        }
+                   }
+                   else{
+                       inputIntereses[0].focus();
                    }
                 }
                 else{
@@ -124,14 +142,13 @@ inputNombre.addEventListener("blur" , validarNombre)
 inputApellido.addEventListener("blur" , validarApellido)
 inputEmail.addEventListener("blur" , validarEmail)
 inputEdad.addEventListener("blur" , validarEdad)
-
+inputSelect.addEventListener("change" , validarPais)
 buttonEnviar.addEventListener("click" , function(e){
     if(validarCampos()){
         alert("datos correctos")
         e.preventDefault();
     }
     else{
-        alert("datos faltantes")
         e.preventDefault();
     }
 })
