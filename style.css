@@ -4,7 +4,13 @@
     --color-principal: #331d5f;
     --color-secundario: #ff0d86;
 }
-
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.hidden{
+    color:red;
+    visibility: hidden;
+}
 .header{
     background-color: var(--color-principal);
     height: 15vh;
@@ -31,7 +37,87 @@
     height: 100%;
     transition: all .3s ease-in-out;
 }
+.main{
+    margin-top: 2rem;
+}
+.form{
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    margin: auto;
+    padding: 1rem;
+    width: 80%;
+    display:flex;
+    flex-direction: column;
+}
+.boxinput{
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
 
+.form .boxinput:nth-child(5) label:first-child ~ label{
+    margin-left: 3rem;
+}
+.form .boxinput:nth-child(6){
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.boxintereses{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 70%;
+}
+.boxintereses label{
+    margin-right: 20px;
+}
+.form .boxinput:nth-child(7){
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+.form .boxinput:nth-child(7) > label{
+    margin-right: 10px;
+}
+textarea{
+    margin-bottom: 10px;
+}
+button{
+    background-color: var(--color-secundario);
+    border:none;
+    border-radius: 5px;
+    color: var(--color-blanco);
+    padding: 10px;
+    font-size: 1rem;
+}
+button:hover{
+    background-color: var(--color-principal);
+}
+input{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 10px;
+}
+aside{
+    display: none;
+}
+footer{
+    background-color: var(--color-principal);
+    box-sizing: border-box;
+    color: var(--color-blanco);
+    margin-top: 10px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    text-align: center;
+}
+footer span{
+    color: var(--color-secundario);
+}
 @media only screen and (min-width: 800px){
     .header{
         flex-direction: column;
@@ -55,5 +141,30 @@
     }
     .nav a:hover{
         color: var(--color-blanco);
+    }
+    .form{
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    .boxinput{
+        width: 49%;
+        border: none;
+    }
+    .boxinput > label{
+        margin-bottom: 5px;
+    }
+    .boxintereses{
+        width: 100%;
+    }
+    .form .boxinput:nth-child(7){
+        flex-direction: column;
+    }
+    .form .boxinput:nth-child(7) select{
+        width: 60%;
+        height: 30px;
+    }
+    button{
+        width: 100%;
     }
 }

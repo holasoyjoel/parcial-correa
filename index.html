@@ -23,13 +23,91 @@
             </nav>
         </header>
         <main class="main">
-            <h2>Main</h2>
+            <form action="" class="form">
+                <div class="boxinput">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre">
+                    <span class="mensajeError hidden">Nombre debe contener al menos 3 caracteres</span>
+                </div>
+                <div class="boxinput">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" name="apellido" id="apellido">
+                    <span class="mensajeError hidden">Apellido debe contener al menos 3 caracteres</span>
+                </div>
+                
+                <div class="boxinput">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email">
+                    <span class="mensajeError hidden">Email ingresado no es valido</span>
+                </div>
+                <div class="boxinput">
+                    <label for="edad">Edad</label>
+                    <input type="text" name="edad" id="edad">
+                    <span class="mensajeError hidden">Edad debe ser entre 0 y 100</span>
+                </div>
+                <div class="boxinput">
+                    <label for="sexo">Sexo</label>
+                    <label for="masculino">
+                        Masculino
+                        <input type="radio" name="sexo" id="masculino">
+                    </label>
+                    <label for="femenino">
+                        Femenino
+                        <input type="radio" name="sexo" id="femenino">
+                    </label>
+                    <span class="mensajeError hidden">Debes elegir un sexo</span>
+                </div>
+                <div class="boxinput">
+                    <label for="intereses">Intereses</label>
+                    <div class="boxintereses">
+                        <label for="deporte">
+                            Deporte
+                            <input type="checkbox" name="intereses" id="deporte">
+                        </label>
+                        <label for="musica">
+                            Musica
+                            <input type="checkbox" name="intereses" id="musica">
+                        </label>
+                        <label for="juegos">
+                            Juegos
+                            <input type="checkbox" name="intereses" id="juegos">
+                        </label>
+                        <label for="tecnologia">
+                            Tecnologia
+                            <input type="checkbox" name="intereses" id="tecnologia">
+                        </label>
+                        <label for="otros">
+                            Otros
+                            <input type="checkbox" name="intereses" id="otro">
+                        </label>
+                    </div>
+                    <span class="mensajeError hidden">Debes elegir un interes</span>
+                </div>
+                <div class="boxinput">
+                    <label for="pais">Pais</label>
+                    <select name="pais" id="pais">
+                        <option value="">-Elige un Pais-</option>
+                        <option value="argentina">Argentina</option>
+                        <option value="brazil">Brazil</option>
+                        <option value="uruguay">Uruguay</option>
+                    </select>
+                    <span class="mensajeError hidden">Debes elegir un pais</span>
+                </div>
+                <div class="boxinput">
+                    <label for="comentario">Comentario</label>
+                    <textarea name="comentario" id="comentario" cols="30" rows="10"></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
         </main>
         <aside class="aside">
             <h2>Aside</h2>
         </aside>
         <footer class="footer">
-            <h2>Footer</h2>
+            <p>
+                Parcial realizado por <span>Correa Joel</span> para la materia de "Lenguaje de programacion
+                para la administracion"
+            </p>
         </footer>
     </body>
 </html>
