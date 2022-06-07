@@ -7,9 +7,29 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
 }
+input{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    outline: none;
+}
+input:focus{
+    border:1px solid grey;
+    color: grey;
+}
 .hidden{
-    color:red;
     visibility: hidden;
+}
+.mensajeError{
+    color: red;
+}
+.borderError{
+    border:2px solid red;
+    color: red;
+}
+.borderCorrecto{
+    border: 2px solid green;
+    color: green;
 }
 .header{
     background-color: var(--color-principal);
@@ -95,11 +115,7 @@ button{
 button:hover{
     background-color: var(--color-principal);
 }
-input{
-    margin-bottom: 10px;
-    margin-top: 10px;
-    padding: 10px;
-}
+
 aside{
     display: none;
 }
